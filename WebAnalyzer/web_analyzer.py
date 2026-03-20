@@ -100,9 +100,8 @@ try:
     plt.bar(labels, values)
     plt.title('Group 09')
     plt.ylabel('Count')
-    plt.savefig('web_analysis_results.png')
+    #plt.savefig('web_analysis_results.png')
     plt.show()
-
-    
+ 
 except Exception as e: 
     print(f"Error fetching content: {e}") 
