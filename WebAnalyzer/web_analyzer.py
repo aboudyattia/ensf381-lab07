@@ -14,15 +14,18 @@ try:
     response = requests.get(url, headers=headers) 
     response.raise_for_status()  # Ensures the request was successful 
     soup = BeautifulSoup(response.text, 'html.parser') 
-    print(f"Successfully fetched content from {url}") 
+    print(f"Successfully fetched content from {url}\n") 
+
+    print("ALL HTML CONTENT:\n")
+
+    print(soup.prettify())
 
     #Getting all headers and a / p tags
-
     headings = soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
     links = soup.find_all('a')
     paragraphs = soup.find_all('p')
 
-    print(f"Number of headings: {len(headings)}")
+    print(f"\nNumber of headings: {len(headings)}")
     print(f"Number of links: {len(links)}")
     print(f"Number of paragraphs: {len(paragraphs)}")
 
